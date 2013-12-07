@@ -1,0 +1,27 @@
+<div class="modal <?php if ($this->fade): ?>fade<?php endif; ?>" id="myModal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <strong><?php echo $this->header; ?></strong>
+  </div>
+  <div class="modal-body">
+    <?php echo $this->content; ?>
+  </div>
+  <div class="modal-footer">
+    <?php if(isset($this->buttons)): ?>
+      <?php foreach ($this->buttons as $button): ?>
+      <a href="<?php echo $button['url']; ?>" class="<?php echo $button['class']; ?>"><?php echo $button['text']; ?></a>
+      <?php endforeach; ?>
+    <?php endif; ?>
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#myModal').modal();
+
+  <?php if (isset($this->redirect)): ?>
+  $('#myModal').on('hidden', function () {
+    window.location.href = '<?php echo $this->redirect; ?>';
+  });
+  <?php endif; ?>
+});
+</script>

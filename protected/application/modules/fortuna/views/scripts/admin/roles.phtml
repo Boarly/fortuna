@@ -1,0 +1,38 @@
+<div class="widget">
+													
+	<div class="widget-content">
+	
+		<?php echo $this->partial('partials/table.phtml', array(
+        	'columns' => array('id' => 'ID', 'name' => 'Name', 'standard' => 'Standard'),
+        	'rows'    => $this->roles,
+        	'actions' => array(
+            	array(
+            	      'url' 		=> 'admin/show-role/id/%s', 
+            	      'class' 		=> 'btn btn-small', 
+            	      'icon' 		=> 'edit'
+            	),
+            	array(
+            	      'url'   => 'admin/delete-role/id/%s',
+            	      'class' => 'btn btn-small', 
+            	      'icon'  => 'remove'
+            	)
+        	),
+        	'actionsId'     => 'id',
+        	'globalActions' => array(
+        	    array(
+					'url'   => 'admin/show-role', 
+					'class' => 'btn btn-small', 
+					'icon'  => 'plus'
+				)
+			),
+            'filters' => array(
+                'standard' => array(
+                    'name'    =>'BooleanToLocalized',
+                    'options' => array()
+                )
+            )
+		)); ?>
+	
+	</div> <!-- /widget-content -->
+	
+</div> <!-- /widget -->

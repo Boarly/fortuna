@@ -1,0 +1,4 @@
+<?php echo $this->partial('partials/widget.phtml', array(
+  'content'  => $this->form,
+  'header'   => isset($this->data) ? $this->translate('Edit Role "%s"', $this->data['name']) : $this->translate('Add Role')
+)); ?>

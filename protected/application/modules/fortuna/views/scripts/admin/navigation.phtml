@@ -1,0 +1,112 @@
+<div class="row">
+    <div class="span6">
+        <div class="widget">                         
+            <div class="widget-content">
+                <ul class="unstyled" id="navigation">
+                    <?php foreach ($this->navigation as $item): ?>
+                    <li rel="<?php echo $item['type']; ?>_<?php echo $item['id']; ?>">
+                         <span class="tag <?php echo $item['type']; ?>"><?php echo $item['slug']; ?></span>
+                         <?php if (isset($item['childs'])): ?>
+                            <ul>
+                            <?php foreach ($item['childs'] as $child): ?>
+                                <li rel="<?php echo $child['type']; ?>_<?php echo $child['id']; ?>">
+                                    <span class="tag <?php echo $child['type']; ?>"><?php echo $child['slug']; ?></span>
+                                </li>
+                            <?php endforeach; ?>
+                            </ul>
+                         <?php endif; ?>
+                     </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div> <!-- /widget-content -->
+            
+        </div> <!-- /widget -->
+    </div>
+    <div class="span3">
+         <div class="widget">
+            <div class="widget-header"><i class="icon-pencil"></i><h3><?php echo $this->translate('Articles'); ?></h3></div>    
+         <div class="widget-content">
+            <ul class="unstyled" id="articles">
+                 <?php foreach ($this->articles as $article): ?>
+                <li rel="article_<?php echo $article['id']; ?>">
+                     <span class="tag article"><?php echo $article['slug']; ?></span>
+                 </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+       <div class="widget">
+        <div class="widget-header">
+                <i class="icon-tag"></i><h3><?php echo $this->translate('Categories'); ?></h3>
+            </div> 
+        <div class="widget-content">
+             <ul class="unstyled" id="categories">
+                <?php foreach ($this->categories as $category): ?>
+                <li rel="category_<?php echo $category['id']; ?>">
+                     <span class="tag category"><?php echo $category['slug']; ?></span>
+                 </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    var sortableIn = 0;
+
+    $( "#navigation").nestedSortable({
+        handle: 'span',
+        items: 'li',
+        toleranceElement: '> span',
+        listType: 'ul',
+        helper: 'clone',
+        forcePlaceholderSize: true,
+        placeholder: 'placeholder',
+        maxLevels: 2,
+        opacity: .6,
+        revert: false,
+        tabSize: 25,
+        tolerance: 'pointer',
+        isAllowed: function(item, parent) {
+            var $parent = $(parent).find('span.tag');
+            var $item   = $(item).find('span.tag');
+
+            if ($item.hasClass('article') && $parent.hasClass('article')) {
+                return false;
+            }
+
+            return true;
+        },
+        receive: function(e, ui) { sortableIn = 1; },
+        over: function(e, ui) { sortableIn = 1; },
+        out: function(e, ui) { sortableIn = 0; },
+        beforeStop: function(e, ui) {
+            if (sortableIn == 0) {
+                ui.item.remove();
+            } 
+        },
+        update: function (event, ui) {
+            $.ajax({
+                type: 'POST',
+                url: "<?php echo $this->baseUrl('admin/navigation') ; ?>",
+                data: $("#navigation").serializeTree("rel","items"),
+                success: function(rsp) {
+                    if (rsp != '1') {
+                        ui.item.remove();
+                    }
+                }
+            });
+
+          
+        }
+    });
+
+    $("#articles li, #categories li").draggable({
+        connectToSortable: "#navigation",
+        "helper": "clone",
+        addClasses: false
+    });
+});
+</script>

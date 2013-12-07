@@ -1,0 +1,20 @@
+<?php echo $this->action('roles', 'admin'); ?>
+
+<?php echo $this->partial('partials/modal.phtml', array(
+	'content'  => $this->translate('Are you sure to delete the role "%s"?', $this->data['name']),
+	'header'   => $this->translate('Delete Role'),
+	'redirect' => $this->baseUrl('admin/roles'),
+	'fade'	 => true,
+	'buttons'  => array(
+	    array(
+			'url'   => $this->baseUrl('admin/roles'),
+			'text'  => $this->translate('Cancel'),
+			'class' => 'btn'
+		),
+		array(
+			'url'   => $this->baseUrl('admin/delete-role/id/' . $this->data['id'] . '/?confirm=1'),
+			'text'  => $this->translate('Delete'),
+			'class' => 'btn btn-primary'
+		)
+	)
+)); ?>

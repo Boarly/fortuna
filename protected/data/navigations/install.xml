@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+        <index>
+                <label>Installation</label>
+                <controller>install</controller>
+                <action>index</action>          
+        </index>
+        <faq>
+                <label>FAQ</label>
+                <controller>install</controller>
+                <action>faq</action>    
+        </faq>
+</configdata>

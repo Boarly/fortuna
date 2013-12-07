@@ -1,0 +1,256 @@
+<?php echo $this->doctype(); ?>
+<html lang="en">
+  <head>
+    <?php echo $this->headTitle(); ?>
+    <?php echo $this->headLink(); ?>
+    <?php echo $this->headMeta(); ?>
+    <?php echo $this->headScript(); ?>
+  </head>
+
+<body>
+  
+<div class="navbar navbar-fixed-top">
+  
+  <div class="navbar-inner">
+    
+    <div class="container">
+      
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span>        
+      </a>
+      
+      <a class="brand" href="<?php echo $this->baseUrl('/admin'); ?>">Fortuna CMS</a>
+      
+      <div class="nav-collapse">
+      
+        <ul class="nav pull-right">
+
+          <li>
+            <a href="<?php echo $this->baseUrl('/'); ?>"><i class="icon-chevron-left"></i> <?php echo $this->translate('Homepage'); ?></a>
+          </li>
+          
+          <li class="divider-vertical"></li>
+          
+          <li class="dropdown">
+            
+            <a data-toggle="dropdown" class="dropdown-toggle " href="#">
+              <?php echo $this->identity->firstname; ?> <?php echo $this->identity->lastname; ?> <b class="caret"></b>              
+            </a>
+            
+            <ul class="dropdown-menu">
+              <li>
+                <a href="<?php echo $this->baseUrl('admin/account/'); ?>"><i class="icon-user"></i> <?php echo $this->translate('Account Settings'); ?></a>
+              </li>
+              
+              <li class="divider"></li>
+              
+              <li>
+                <a href="<?php echo $this->baseUrl('auth/logout/'); ?>"><i class="icon-off"></i> <?php echo $this->translate('Logout'); ?></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        
+      </div> <!-- /nav-collapse -->
+      
+    </div> <!-- /container -->
+    
+  </div> <!-- /navbar-inner -->
+  
+</div> <!-- /navbar -->
+
+
+
+
+<div id="content">
+  
+  <div class="container">
+    
+    <div class="row">
+      
+      <div class="span3">
+        
+        <div class="account-container">
+        
+          <div class="account-avatar">
+            <img src="<?= $this->gravatar($this->identity->email, 'G', 48); ?>" class="thumbnail" />
+          </div> <!-- /account-avatar -->
+        
+          <div class="account-details">
+          
+            <span class="account-name"><?php echo $this->identity->firstname; ?> <?php echo $this->identity->lastname; ?></span>
+            
+            <span class="account-role"><?php echo $this->identity->acl_role; ?></span>
+            
+            <span class="account-actions">
+              <a href="<?php echo $this->baseUrl('admin/account/'); ?>"><?php echo $this->translate('Edit Account'); ?></a>
+            </span>
+          
+          </div> <!-- /account-details -->
+        
+        </div> <!-- /account-container -->
+        
+        <hr />
+
+        <?php echo $this->navigation()->menu()->render(); ?>
+        
+        <br />
+    
+      </div> <!-- /span3 -->
+      
+      
+      
+      <div class="span9">
+
+        <h1 class="page-title"><i class="icon-<?php echo $this->placeholder('pageIcon'); ?>"></i> <?php echo $this->translate($this->pageTitle); ?></h1>
+        
+        <?php echo $this->layout()->content; ?>
+        
+      </div> <!-- /span9 -->
+      
+      
+    </div> <!-- /row -->
+    
+  </div> <!-- /container -->
+  
+</div> <!-- /content -->
+          
+  
+<div id="footer">
+  
+  <div class="container">       
+    <hr>
+    <p>Fortuna CMS <?php echo $this->version; ?> | PHP <?php echo phpversion(); ?></p>
+  </div> <!-- /container -->
+  
+</div> <!-- /footer -->
+
+<script type="text/javascript">
+/* Default class modification */
+$.extend( $.fn.dataTableExt.oStdClasses, {
+	"sWrapper": "dataTables_wrapper form-inline"
+} );
+
+/* API method to get paging information */
+$.fn.dataTableExt.oApi.fnPagingInfo = function ( oSettings )
+{
+	return {
+		"iStart":         oSettings._iDisplayStart,
+		"iEnd":           oSettings.fnDisplayEnd(),
+		"iLength":        oSettings._iDisplayLength,
+		"iTotal":         oSettings.fnRecordsTotal(),
+		"iFilteredTotal": oSettings.fnRecordsDisplay(),
+		"iPage":          Math.ceil( oSettings._iDisplayStart / oSettings._iDisplayLength ),
+		"iTotalPages":    Math.ceil( oSettings.fnRecordsDisplay() / oSettings._iDisplayLength )
+	};
+}
+
+/* Bootstrap style pagination control */
+$.extend( $.fn.dataTableExt.oPagination, {
+	"bootstrap": {
+		"fnInit": function( oSettings, nPaging, fnDraw ) {
+			var oLang = oSettings.oLanguage.oPaginate;
+			var fnClickHandler = function ( e ) {
+				e.preventDefault();
+				if ( oSettings.oApi._fnPageChange(oSettings, e.data.action) ) {
+					fnDraw( oSettings );
+				}
+			};
+
+			$(nPaging).addClass('pagination').append(
+				'<ul>'+
+					'<li class="prev disabled"><a href="#">&larr; '+oLang.sPrevious+'</a></li>'+
+					'<li class="next disabled"><a href="#">'+oLang.sNext+' &rarr; </a></li>'+
+				'</ul>'
+			);
+			var els = $('a', nPaging);
+			$(els[0]).bind( 'click.DT', { action: "previous" }, fnClickHandler );
+			$(els[1]).bind( 'click.DT', { action: "next" }, fnClickHandler );
+		},
+
+		"fnUpdate": function ( oSettings, fnDraw ) {
+			var iListLength = 5;
+			var oPaging = oSettings.oInstance.fnPagingInfo();
+			var an = oSettings.aanFeatures.p;
+			var i, j, sClass, iStart, iEnd, iHalf=Math.floor(iListLength/2);
+
+			if ( oPaging.iTotalPages < iListLength) {
+				iStart = 1;
+				iEnd = oPaging.iTotalPages;
+			}
+			else if ( oPaging.iPage <= iHalf ) {
+				iStart = 1;
+				iEnd = iListLength;
+			} else if ( oPaging.iPage >= (oPaging.iTotalPages-iHalf) ) {
+				iStart = oPaging.iTotalPages - iListLength + 1;
+				iEnd = oPaging.iTotalPages;
+			} else {
+				iStart = oPaging.iPage - iHalf + 1;
+				iEnd = iStart + iListLength - 1;
+			}
+
+			for ( i=0, iLen=an.length ; i<iLen ; i++ ) {
+				// Remove the middle elements
+				$('li:gt(0)', an[i]).filter(':not(:last)').remove();
+
+				// Add the new list items and their event handlers
+				for ( j=iStart ; j<=iEnd ; j++ ) {
+					sClass = (j==oPaging.iPage+1) ? 'class="active"' : '';
+					$('<li '+sClass+'><a href="#">'+j+'</a></li>')
+						.insertBefore( $('li:last', an[i])[0] )
+						.bind('click', function (e) {
+							e.preventDefault();
+							oSettings._iDisplayStart = (parseInt($('a', this).text(),10)-1) * oPaging.iLength;
+							fnDraw( oSettings );
+						} );
+				}
+
+				// Add / remove disabled classes from the static elements
+				if ( oPaging.iPage === 0 ) {
+					$('li:first', an[i]).addClass('disabled');
+				} else {
+					$('li:first', an[i]).removeClass('disabled');
+				}
+
+				if ( oPaging.iPage === oPaging.iTotalPages-1 || oPaging.iTotalPages === 0 ) {
+					$('li:last', an[i]).addClass('disabled');
+				} else {
+					$('li:last', an[i]).removeClass('disabled');
+				}
+			}
+		}
+	}
+} );
+
+$(document).ready(function() {
+	$('.datatable').dataTable( {
+		"sDom": "<<l><f>r>t<<p>>",
+		"sPaginationType": "bootstrap",
+		"oLanguage": {
+            "sLengthMenu":   "_MENU_ <?php echo $this->translate('Entries'); ?>",
+            "sZeroRecords":  "<?php echo $this->translate('No records found.'); ?>",
+            "sInfoPostFix":  "",
+            "sSearch":       "<?php echo $this->translate('Search'); ?>",
+            "sUrl":          "",
+            "oPaginate": {
+                "sFirst":    "<?php echo $this->translate('First'); ?>",
+                "sPrevious": "<?php echo $this->translate('Previous'); ?>",
+                "sNext":     "<?php echo $this->translate('Next'); ?>",
+                "sLast":     "<?php echo $this->translate('Last'); ?>"
+            }
+        }
+	});
+
+	$('select')
+    .attr('data-placeholder', '<?php echo $this->translate('Select Some Options'); ?>')
+    .chosen({
+		allow_single_deselect: true,
+        no_results_text: "<?php echo $this->translate('No results matched'); ?>"
+	});
+});
+</script>
+
+  </body>
+</html>

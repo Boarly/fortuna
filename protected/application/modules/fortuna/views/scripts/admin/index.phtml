@@ -1,0 +1,94 @@
+<div class="stat-container">								
+	<div class="stat-holder">						
+		<div class="stat">							
+			<span><?php echo $this->articlesCount; ?></span>							
+			<?php echo $this->translate('Articles'); ?>							
+		</div> <!-- /stat -->						
+	</div> <!-- /stat-holder -->
+	
+	<div class="stat-holder">						
+		<div class="stat">							
+			<span><?php echo $this->categoriesCount; ?></span>							
+			<?php echo $this->translate('Categories'); ?>
+		</div> <!-- /stat -->						
+	</div> <!-- /stat-holder -->
+	
+	<div class="stat-holder">						
+		<div class="stat">							
+			<span><?php echo $this->articlesCategoryAvg; ?></span>							
+			<?php echo $this->translate('&empty; Articles'); ?>
+		</div> <!-- /stat -->						
+	</div> <!-- /stat-holder -->
+
+	<div class="stat-holder">						
+		<div class="stat">							
+			<span><?php echo $this->usersCount; ?></span>							
+			<?php echo $this->translate('Users'); ?>
+		</div> <!-- /stat -->						
+	</div> <!-- /stat-holder -->
+</div> <!-- /stat-container -->
+<div class="row">
+	<div class="span5">
+		<div class="widget">			
+			<div class="widget-header">
+				<i class="icon-signal"></i><h3><?php echo $this->translate('Articles Lately'); ?></h3>
+			</div> <!-- /widget-header -->
+												
+			<div class="widget-content">
+				
+				<div id="articles-lately-chart" class="chart-holder"></div> <!-- /donut-chart -->
+					
+			</div> <!-- /widget-content -->
+		</div> <!-- /widget -->
+	</div>
+	<div class="span4">
+		<div class="widget">			
+			<div class="widget-header">
+				<i class="icon-signal"></i><h3><?php echo $this->translate('Articles per Category'); ?></h3>
+			</div> <!-- /widget-header -->
+												
+			<div class="widget-content">
+				
+				<div id="articles-category-chart" class="chart-holder"></div> <!-- /donut-chart -->
+					
+			</div> <!-- /widget-content -->
+		</div> <!-- /widget -->
+	</div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+	$.plot($("#articles-category-chart"), <?php echo json_encode($this->articlesPerCategory); ?>, {
+		colors: ["#F90", "#3C4049", "#666", "#BBB"],
+		series: {
+            pie: { 
+                show: true,
+                combine: {
+                    color: '#999',
+                    threshold: 0.1
+                }
+            }
+        },
+        legend: {
+            show: false
+        },
+		grid: {
+            hoverable: true,
+        }
+	});
+
+	
+
+	$.plot($("#articles-lately-chart"), [<?php echo json_encode($this->articlesLately); ?>], { 
+		xaxis: { mode: "time", minTickSize: [1, "day"] },
+		series: {
+                   lines: { show: true },
+                   points: { show: true }
+               },
+               
+               grid: { hoverable: true, clickable: true },
+    	colors: ["#F90", "#3C4049", "#666", "#BBB"]
+	});
+	
+});
+</script>

@@ -1,0 +1,47 @@
+<div class="widget">
+													
+	<div class="widget-content">
+	
+		<?php echo $this->partial('partials/table.phtml', array(
+        	'columns' => array('id' => 'ID', 'title' => 'Title', 'date' => 'Date', 'is_home' => 'Homepage'),
+        	'rows'    => $this->articles,
+        	'actions' => array(
+            	array(
+            	      'url' 		=> 'admin/show-article/id/%s', 
+            	      'class' 		=> 'btn btn-small', 
+            	      'icon' 		=> 'edit'
+            	),
+            	array(
+            	      'url'   => 'admin/delete-article/id/%s',
+            	      'class' => 'btn btn-small', 
+            	      'icon'  => 'remove'
+            	),
+                array(
+                      'url'   => 'article/id/%s',
+                      'class' => 'btn btn-small', 
+                      'icon'  => 'zoom-in'
+                )
+        	),
+        	'actionsId'     => 'id',
+        	'globalActions' => array(
+        	    array(
+					'url'   => 'admin/show-article', 
+					'class' => 'btn btn-small', 
+					'icon'  => 'plus'
+				)
+			),
+            'filters' => array(
+                'is_home' => array(
+                    'name' => 'BooleanToLocalized',
+                    'options' => array()
+                ),
+                'date' => array(
+                    'name' => 'DateToLocalized',
+                    'options' => array()
+                )
+            )
+		)); ?>
+	
+	</div> <!-- /widget-content -->
+	
+</div> <!-- /widget -->

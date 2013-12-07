@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.6.1" />
+
+	<title>Class Fortuna_Model_Article | Fortuna CMS</title>
+
+	<script type="text/javascript" src="resources/combined.js?144019575"></script>
+	<script type="text/javascript" src="elementlist.js?578987407"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li class="active"><a href="package-Fortuna.html">Fortuna<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.Controller.html">Controller<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.Controller.Plugin.html">Plugin</a>
+						</li>
+							</ul></li>
+				<li><a href="package-Fortuna.Db.html">Db<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.Db.Table.html">Table</a>
+						</li>
+							</ul></li>
+				<li><a href="package-Fortuna.Filter.html">Filter</a>
+						</li>
+				<li><a href="package-Fortuna.Form.html">Form</a>
+						</li>
+				<li class="active"><a href="package-Fortuna.Model.html">Model</a>
+						</li>
+				<li><a href="package-Fortuna.Setup.html">Setup</a>
+						</li>
+				<li><a href="package-Fortuna.View.html">View<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.View.Helper.html">Helper</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="package-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Fortuna_Model_AclPrivilege.html">Fortuna_Model_AclPrivilege</a></li>
+				<li><a href="class-Fortuna_Model_AclResource.html">Fortuna_Model_AclResource</a></li>
+				<li><a href="class-Fortuna_Model_AclRole.html">Fortuna_Model_AclRole</a></li>
+				<li><a href="class-Fortuna_Model_AclRolePrivilege.html">Fortuna_Model_AclRolePrivilege</a></li>
+				<li class="active"><a href="class-Fortuna_Model_Article.html">Fortuna_Model_Article</a></li>
+				<li><a href="class-Fortuna_Model_ArticleCategory.html">Fortuna_Model_ArticleCategory</a></li>
+				<li><a href="class-Fortuna_Model_Category.html">Fortuna_Model_Category</a></li>
+				<li><a href="class-Fortuna_Model_Navigation.html">Fortuna_Model_Navigation</a></li>
+				<li><a href="class-Fortuna_Model_User.html">Fortuna_Model_User</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-Fortuna.Model.html" title="Summary of Fortuna\Model"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="fortuna-cms-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+			</li>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Fortuna_Model_Article</h1>
+
+
+	<div class="description">
+	
+<p>model class for articles table</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Zend_Db_Table_Abstract
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+			<a href="class-Fortuna_Db_Table_Abstract.html"><span>Fortuna_Db_Table_Abstract</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>Fortuna_Model_Article</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-Fortuna.html">Fortuna</a>\<a href="package-Fortuna.Model.html">Model</a><br />
+
+				<b>Copyright:</b>
+				Copyright (c) 2012 Peter Persiel, Sven Ballay<br />
+				<b>Version:</b>
+				1.0<br />
+				<b>Since:</b>
+				1.0<br />
+				<b>Used by:</b>
+				<code><code><a href="class-Fortuna_AdminController.html#_articlesAction">Fortuna_AdminController::articlesAction()</a></code></code> <br />
+				<b>Used by:</b>
+				<code><code><a href="class-Fortuna_AdminController.html#_showArticleAction">Fortuna_AdminController::showArticleAction()</a></code></code> <br />
+				<b>Used by:</b>
+				<code><code><a href="class-Fortuna_AdminController.html#_deleteArticleAction">Fortuna_AdminController::deleteArticleAction()</a></code></code> <br />
+				<b>Used by:</b>
+				<code><code><a href="class-Fortuna_AdminController.html#_navigationAction">Fortuna_AdminController::navigationAction()</a></code></code> <br />
+				<b>Used by:</b>
+				<code><code><a href="class-Fortuna_AdminController.html#_indexAction">Fortuna_AdminController::indexAction()</a></code></code> <br />
+				<b>Used by:</b>
+				<code><code><a href="class-Fortuna_IndexController.html#_articleAction">Fortuna_IndexController::articleAction()</a></code></code> <br />
+				<b>Used by:</b>
+				<code><code><a href="class-Fortuna_IndexController.html#_indexAction">Fortuna_IndexController::indexAction()</a></code></code> <br />
+				<b>Used by:</b>
+				<code><code><a href="class-Fortuna_Model_ArticleCategory.html#_getArticlesByCategoryId">Fortuna_Model_ArticleCategory::getArticlesByCategoryId()</a></code></code> <br />
+				<b>Used by:</b>
+				<code><code><a href="class-Fortuna_Model_Navigation.html#_getNavTree">Fortuna_Model_Navigation::getNavTree()</a></code></code> <br />
+		<b>Located at</b> <a href="source-class-Fortuna_Model_Article.html#3" title="Go to source code">modules/fortuna/models/Article.php</a><br />
+	</div>
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="_getSlug" id="__getSlug">
+
+		<td class="attributes"><code>
+			 protected 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#__getSlug">#</a>
+		<code><a href="source-class-Fortuna_Model_Article.html#30" title="Go to source code">_getSlug</a>( <span>string <var>$title</var></span> )</code>
+
+		<div class="description short">
+			
+<p>generate slug based on $title</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>generate slug based on $title</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$title</var></dt>
+					<dd><code>string</code><br> Full title of article</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getArticles" id="_getArticles">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getArticles">#</a>
+		<code><a href="source-class-Fortuna_Model_Article.html#49" title="Go to source code">getArticles</a>( )</code>
+
+		<div class="description short">
+			
+<p>get all articles</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>get all articles</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getHomeId" id="_getHomeId">
+
+		<td class="attributes"><code>
+			 public 
+			integer|boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getHomeId">#</a>
+		<code><a href="source-class-Fortuna_Model_Article.html#64" title="Go to source code">getHomeId</a>( )</code>
+
+		<div class="description short">
+			
+<p>get home article id</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>get home article id</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer|boolean</code><br />
+				</div>
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getArticle" id="_getArticle">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getArticle">#</a>
+		<code><a href="source-class-Fortuna_Model_Article.html#90" title="Go to source code">getArticle</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>get article data by $id</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>get article data by $id</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd><code>integer</code><br> Id of article to get</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getArticleBySlug" id="_getArticleBySlug">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getArticleBySlug">#</a>
+		<code><a href="source-class-Fortuna_Model_Article.html#120" title="Go to source code">getArticleBySlug</a>( <span>string <var>$slug</var></span> )</code>
+
+		<div class="description short">
+			
+<p>get article data by $slug</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>get article data by $slug</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$slug</var></dt>
+					<dd><code>string</code><br> slug of article to get</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getArticlesCount" id="_getArticlesCount">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getArticlesCount">#</a>
+		<code><a href="source-class-Fortuna_Model_Article.html#146" title="Go to source code">getArticlesCount</a>( )</code>
+
+		<div class="description short">
+			
+<p>get number of overall articles</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>get number of overall articles</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getArticlesLately" id="_getArticlesLately">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getArticlesLately">#</a>
+		<code><a href="source-class-Fortuna_Model_Article.html#167" title="Go to source code">getArticlesLately</a>( )</code>
+
+		<div class="description short">
+			
+<p>get number of articles created at a day, an array is returnded with timestamp
+and count of articles</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>get number of articles created at a day, an array is returnded with timestamp
+and count of articles</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="saveArticle" id="_saveArticle">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_saveArticle">#</a>
+		<code><a href="source-class-Fortuna_Model_Article.html#191" title="Go to source code">saveArticle</a>( <span>array <var>$input</var></span>, <span>integer|null <var>$id</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>save an article by updating or inserting of $input</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>save an article by updating or inserting of $input</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$input</var></dt>
+					<dd><code>array</code><br> data to save</dd>
+					<dt><var>$id</var></dt>
+					<dd><code>integer|null</code><br> id of dataset to update</dd>
+				</dl></div>
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Fortuna_Db_Table_Abstract.html#methods">Fortuna_Db_Table_Abstract</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Fortuna_Db_Table_Abstract.html#__setupTableName">_setupTableName()</a>, 
+			<a href="class-Fortuna_Db_Table_Abstract.html#_exists">exists()</a>, 
+			<a href="class-Fortuna_Db_Table_Abstract.html#_getTableName">getTableName()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="_name" id="$_name">
+
+		<td class="attributes"><code>
+			protected 
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Fortuna_Model_Article.html#14" title="Go to source code"><var>$_name</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">'article'</span></code></td>
+		<td class="description"><div>
+			<a href="#$_name" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>name of table</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>name of table</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="_primary" id="$_primary">
+
+		<td class="attributes"><code>
+			protected 
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Fortuna_Model_Article.html#22" title="Go to source code"><var>$_primary</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">'id'</span></code></td>
+		<td class="description"><div>
+			<a href="#$_primary" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>name of primary key</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>name of primary key</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+</div>
+
+	<div id="footer">
+		Fortuna CMS API documentation generated by <a href="http://apigen.org">ApiGen 2.6.1</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

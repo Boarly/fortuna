@@ -1,0 +1,10 @@
+<?php echo $this->partial('partials/widget.phtml', array(
+  'content'  => $this->form,
+  'header'   => isset($this->data) ? $this->translate('Edit Article "%s"', $this->data['title']) : $this->translate('Add Article')
+)); ?>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#element-content').wysihtml5();
+});
+</script>

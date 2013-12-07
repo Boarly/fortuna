@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.6.1" />
+
+	<title>Class Fortuna_Version | Fortuna CMS</title>
+
+	<script type="text/javascript" src="resources/combined.js?144019575"></script>
+	<script type="text/javascript" src="elementlist.js?578987407"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li class="active"><a href="package-Fortuna.html">Fortuna<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.Controller.html">Controller<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.Controller.Plugin.html">Plugin</a>
+						</li>
+							</ul></li>
+				<li><a href="package-Fortuna.Db.html">Db<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.Db.Table.html">Table</a>
+						</li>
+							</ul></li>
+				<li><a href="package-Fortuna.Filter.html">Filter</a>
+						</li>
+				<li><a href="package-Fortuna.Form.html">Form</a>
+						</li>
+				<li><a href="package-Fortuna.Model.html">Model</a>
+						</li>
+				<li><a href="package-Fortuna.Setup.html">Setup</a>
+						</li>
+				<li><a href="package-Fortuna.View.html">View<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.View.Helper.html">Helper</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="package-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Fortuna_Bootstrap.html">Fortuna_Bootstrap</a></li>
+				<li><a href="class-Fortuna_Setup.html">Fortuna_Setup</a></li>
+				<li class="active"><a href="class-Fortuna_Version.html">Fortuna_Version</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-Fortuna.html" title="Summary of Fortuna"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="fortuna-cms-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+			</li>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Fortuna_Version</h1>
+
+
+	<div class="description">
+	
+<p>class containing installed version of the Fortuna lib</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		<b>Final</b><br />
+		
+		
+		<b>Package:</b> <a href="package-Fortuna.html">Fortuna</a><br />
+
+				<b>Copyright:</b>
+				Copyright (c) 2012 Peter Persiel, Sven Ballay<br />
+				<b>Version:</b>
+				1.0<br />
+				<b>Since:</b>
+				1.0<br />
+				<b>Used by:</b>
+				<code><code><a href="class-Fortuna_AdminController.html#_init">Fortuna_AdminController::init()</a></code></code> <br />
+				<b>Used by:</b>
+				<code><code><a href="class-Fortuna_InstallController.html#_init">Fortuna_InstallController::init()</a></code></code> <br />
+		<b>Located at</b> <a href="source-class-Fortuna_Version.html#3" title="Go to source code">Version.php</a><br />
+	</div>
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="compareVersion" id="_compareVersion">
+
+		<td class="attributes"><code>
+			 public static
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_compareVersion">#</a>
+		<code><a href="source-class-Fortuna_Version.html#14" title="Go to source code">compareVersion</a>( <span>string <var>$version</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Compare the specified version string $version with the current VERSION.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Compare the specified version string $version with the current VERSION.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$version</var></dt>
+					<dd><code>string</code><br> A version string (e.g. "0.7.1").</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>-1 if the $version is older, 0 if they are the same, and +1 if $version is
+newer.<br />
+				</div>
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+	<table class="summary" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="VERSION" id="VERSION">
+
+		<td class="attributes"><code>
+			string
+		</code></td>
+		<td class="name"><code>
+				<a href="source-class-Fortuna_Version.html#12" title="Go to source code"><b>VERSION</b></a>
+		</code></td>
+		<td class="value"><code><span class="php-quote">'1.0'</span></code></td>
+		<td class="description"><div>
+			<a href="#VERSION" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Fortuna CMS API documentation generated by <a href="http://apigen.org">ApiGen 2.6.1</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

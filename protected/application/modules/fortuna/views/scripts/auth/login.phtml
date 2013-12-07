@@ -1,0 +1,26 @@
+ <form method="POST" action="<?php echo $this->baseUrl('auth/login/'); ?>">
+
+    <div class="control-group">
+      <label class="control-label" for="email"><?php echo $this->translate('Email'); ?></label>
+      <div class="controls">
+        <input type="text" class="" name="email" id="email" value="<?php echo @$_POST['email']; ?>">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="password"><?php echo $this->translate('Password'); ?></label>
+      <div class="controls">
+        <input type="password" class="" name="password" id="password" value="<?php echo @$_POST['password']; ?>">
+      </div>
+    </div>
+  
+  <div id="remember-me" class="pull-left">
+    <input type="checkbox" name="remember" value="1" id="remember" <?php if (isset($_POST['remember'])): ?>checked="checked"<?php endif; ?> />
+    <label id="remember-label" for="remember"><?php echo $this->translate('Remember Me'); ?></label>
+  </div>
+  
+  <div class="pull-right">
+    <button type="submit" class="btn btn-primary btn-large">
+      <?php echo $this->translate('Login'); ?>
+    </button>
+  </div>
+</form>

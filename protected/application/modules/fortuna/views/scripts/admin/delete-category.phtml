@@ -1,0 +1,20 @@
+<?php echo $this->action('categories', 'admin'); ?>
+
+<?php echo $this->partial('partials/modal.phtml', array(
+	'content'  => $this->translate('Are you sure to delete the category "%s"?', $this->data['name']),
+	'header'   => $this->translate('Delete Category'),
+	'redirect' => $this->baseUrl('admin/categories'),
+	'fade'	 => true,
+	'buttons'  => array(
+	    array(
+			'url'   => $this->baseUrl('admin/categories'),
+			'text'  => $this->translate('Cancel'),
+			'class' => 'btn'
+		),
+		array(
+			'url'   => $this->baseUrl('admin/delete-category/id/' . $this->data['id'] . '/?confirm=1'),
+			'text'  => $this->translate('Delete'),
+			'class' => 'btn btn-primary'
+		)
+	)
+)); ?>

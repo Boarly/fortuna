@@ -1,0 +1,49 @@
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered datatable">
+	<thead>
+		<tr>
+			<?php foreach ($this->columns as $column): ?>
+			<th><?php echo $this->translate($column); ?></th>
+			<?php endforeach; ?>
+			<?php if (isset($this->actions) && isset($this->actionsId)): ?>
+				<th width="100">&nbsp;</th>
+			<?php endif; ?>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<?php foreach ($this->rows as $row): ?>
+		<tr>
+			<?php foreach (array_keys($this->columns) as $column): ?>
+				<?php if (isset($this->filters[$column])): ?>
+					<td><?php echo Zend_Filter::filterStatic($row[$column], $this->filters[$column]['name'], $this->filters[$column]['options']); ?></td>
+				<?php else: ?>
+					<td><?php echo !$row[$column] ? '-' : $this->translate($row[$column]); ?></td>
+				<?php endif; ?>
+			<?php endforeach; ?>
+		
+			<?php if (isset($this->actions) && isset($this->actionsId)): ?>
+				<td class="action-td">
+					<?php foreach ($this->actions as $action): ?>
+						<a href="<?php echo $this->baseUrl(sprintf($action['url'], $row[$this->actionsId])); ?>" class="<?php echo $action['class']; ?>">
+							<i class="icon-<?php echo $action['icon']; ?>"></i>								
+						</a>
+					<?php endforeach; ?>			
+				</td>
+			<?php endif; ?>
+		</tr>
+		<?php endforeach; ?>
+	</tbody>
+	<?php if (isset($this->globalActions)): ?>
+	<tfoot>
+		<tr>
+			<td colspan="200">
+				<?php foreach ($this->globalActions as $action): ?>
+					<a href="<?php echo $this->baseUrl($action['url']); ?>" class="<?php echo $action['class']; ?>">
+						<i class="icon-<?php echo $action['icon']; ?>"></i>								
+					</a>
+				<?php endforeach; ?>	
+			</td>
+		</tr>
+	</tfoot>
+	<?php endif; ?>
+</table>

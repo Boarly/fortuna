@@ -1,0 +1,83 @@
+<div class="widget">								
+	<div class="widget-content">
+		<div class="tabbable">
+		  <ul class="nav nav-tabs">
+		    <li class="active"><a href="#settings" data-toggle="tab"><i class="icon-cog"></i> <?php echo $this->translate('Settings'); ?></a></li>
+		    <li><a href="#schema" data-toggle="tab"><i class="icon-list-alt"></i> <?php echo $this->translate('Database Schema'); ?><?php if ($this->schema['update']): ?>&nbsp;&nbsp;<span class="badge"><?php echo $this->translate('Update'); ?></span><?php endif; ?></a></li>
+		    <li><a href="#requirements" data-toggle="tab"><i class="icon-road"></i> <?php echo $this->translate('Server Requirements'); ?></a></li>
+		    <li><a href="#writable" data-toggle="tab"><i class="icon-file"></i> <?php echo $this->translate('Writable Paths'); ?></a></li>
+		  </ul>
+		  <div class="tab-content">
+		    <div class="tab-pane active" id="settings">
+		    	<?php echo $this->form; ?>
+		    </div>
+		    <div class="tab-pane" id="schema">
+		      <table class="table table-striped table-bordered">
+					<tbody>
+						<tr>
+							<td><?php echo $this->translate('Latest'); ?></td>
+							<td><?php echo $this->schema['latest']; ?></td>
+						</tr>
+						<tr>
+							<td><?php echo $this->translate('Installed'); ?></td>
+							<td><?php echo $this->schema['installed'] ? $this->schema['installed'] : '-'; ?></td>
+						</tr>
+					</tbody>
+						<?php if ($this->schema['update']): ?>
+						<tfoot>
+							<tr>
+								<td colspan="2">
+									<a data-toggle="modal" href="#migrate" class="btn btn-large center"><?php echo $this->translate('Migrate Schema'); ?> <strong><?php echo $this->schema['latest']; ?></strong></a>
+									<div id="migrate" class="modal hide fade">
+							            <div class="modal-header">
+							              <a class="close" data-dismiss="modal">×</a>
+							              <strong><?php echo $this->translate('Migrate Database Schema'); ?></strong>
+							            </div>
+							            <div class="modal-body">
+							              <p><?php echo $this->translate('Migrate the schema <strong>%s</strong>?', $this->schema['latest']); ?></p>
+							            </div>
+							            <div class="modal-footer">
+							              <a href="#" class="btn" data-dismiss="modal"><?php echo $this->translate('Cancel'); ?></a>
+							              <a href="<?php echo $this->baseUrl('/admin/settings/?migrate=1'); ?>" class="btn btn-primary"><?php echo $this->translate('Migrate'); ?></a>
+							            </div>
+							          </div>
+									</div>
+								</td>
+							</tr>
+						<tfoot>
+						<?php endif; ?>
+				</table>
+		    </div>
+		    <div class="tab-pane" id="requirements">
+		    	<table class="table table-striped table-bordered">
+					<tbody>
+						<tr>
+							<td>PHP <?php echo $this->php['needed']; ?></td>
+							<td><i class="icon-<?php echo $this->php['found'] ? 'ok' : 'remove'; ?>"></i></td>
+						</tr>
+						<?php foreach ($this->extensions as $extension => $found): ?>
+						<tr>
+							<td><?php echo $extension; ?></td>
+							<td><i class="icon-<?php echo $found ? 'ok' : 'remove'; ?>"></i>
+						</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+		    </div>
+		    <div class="tab-pane" id="writable">
+		    	<table class="table table-striped table-bordered">
+					<tbody>
+						<?php foreach ($this->writable as $path => $writable): ?>
+						<tr>
+							<td><?php echo $path; ?></td>
+							<td><i class="icon-<?php echo $writable ? 'ok' : 'remove'; ?>"></i>
+						</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+		    </div>
+		  </div>
+		</div>
+		
+	</div>
+</div>

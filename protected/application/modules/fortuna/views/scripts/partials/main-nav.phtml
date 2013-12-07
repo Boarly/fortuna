@@ -1,0 +1,44 @@
+<?php
+/**
+ * @author   Kanstantsin A Kamkou (2ka.by)
+ */
+$html = array('<ul id="main-nav" class="nav nav-tabs nav-stacked">');
+
+foreach ($this->container as $page) {
+    // visibility of the page
+    if (!$page->isVisible() || !$this->navigation()->accept($page)) {
+        continue;
+    }
+
+    // dropdown
+    $dropdown = !empty($page->pages);
+
+    // header
+    $html[] = '<li' . ($page->isActive() ? ' class="active"' : '') . ($dropdown ? ' class="dropdown"' : '') . '>';
+
+    $html[] = '<a href="' . ($dropdown ? '#' : $page->getHref()) . '" '
+        . 'class="dropdown-toggle" data-toggle="dropdown">';
+
+    if ($page->get('icon')) {
+        $html[] = '<i class="icon-' . $page->get('icon') . '"></i>';
+    }
+
+    $html[] = $this->translate($page->getLabel());
+
+    if ($dropdown) {
+        $html[] = '<b class="caret"></b>';
+    }
+
+    $html[] = '</a>';
+
+    if (!$dropdown) {
+        $html[] = '</li>';
+        continue;
+    }
+
+    $html[] = "</li>";
+}
+
+$html[] = '</ul>';
+
+echo join(PHP_EOL, $html);

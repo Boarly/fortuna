@@ -1,0 +1,22 @@
+<div class="widget">     
+	<div class="widget-content">			
+		<ol class="faq-list">
+			<?php foreach ($this->faq as $faq): ?>
+			<li>
+				<h4><?php echo $this->translate($faq->question); ?></h4>
+				<p><?php echo $this->translate($faq->answer); ?></p>
+			</li>
+		<?php endforeach; ?>
+		</ol>
+	</div>
+</div>
+
+<script>
+
+$(function () {
+	
+	$('.faq-list').goFaq();
+	
+});
+
+</script>

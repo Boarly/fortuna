@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.6.1" />
+
+	<title>Class Fortuna_AdminController | Fortuna CMS</title>
+
+	<script type="text/javascript" src="resources/combined.js?144019575"></script>
+	<script type="text/javascript" src="elementlist.js?578987407"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li class="active"><a href="package-Fortuna.html">Fortuna<span></span></a>
+						<ul>
+				<li class="active"><a href="package-Fortuna.Controller.html">Controller<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.Controller.Plugin.html">Plugin</a>
+						</li>
+							</ul></li>
+				<li><a href="package-Fortuna.Db.html">Db<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.Db.Table.html">Table</a>
+						</li>
+							</ul></li>
+				<li><a href="package-Fortuna.Filter.html">Filter</a>
+						</li>
+				<li><a href="package-Fortuna.Form.html">Form</a>
+						</li>
+				<li><a href="package-Fortuna.Model.html">Model</a>
+						</li>
+				<li><a href="package-Fortuna.Setup.html">Setup</a>
+						</li>
+				<li><a href="package-Fortuna.View.html">View<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.View.Helper.html">Helper</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="package-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Fortuna_AdminController.html">Fortuna_AdminController</a></li>
+				<li><a href="class-Fortuna_AuthController.html">Fortuna_AuthController</a></li>
+				<li><a href="class-Fortuna_ErrorController.html">Fortuna_ErrorController</a></li>
+				<li><a href="class-Fortuna_IndexController.html">Fortuna_IndexController</a></li>
+				<li><a href="class-Fortuna_InstallController.html">Fortuna_InstallController</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-Fortuna.Controller.html" title="Summary of Fortuna\Controller"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="fortuna-cms-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+			</li>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Fortuna_AdminController</h1>
+
+
+	<div class="description">
+	
+<p>admin controller class for accessing the admin area this class is intialized
+if /admin is accessed</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Zend_Controller_Action
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>Fortuna_AdminController</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-Fortuna.html">Fortuna</a>\<a href="package-Fortuna.Controller.html">Controller</a><br />
+
+				<b>Copyright:</b>
+				Copyright (c) 2012 Peter Persiel, Sven Ballay<br />
+				<b>Version:</b>
+				1.0<br />
+				<b>Since:</b>
+				1.0<br />
+		<b>Located at</b> <a href="source-class-Fortuna_AdminController.html#3" title="Go to source code">modules/fortuna/controllers/AdminController.php</a><br />
+	</div>
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="init" id="_init">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_init">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#15" title="Go to source code">init</a>( )</code>
+
+		<div class="description short">
+			
+<p>method to initialize controller, called at Zend_Controller_Action</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>method to initialize controller, called at Zend_Controller_Action</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						Zend_Auth<br />
+						Zend_Navigation<br />
+						<code><code><a href="class-Fortuna_Version.html">Fortuna_Version</a></code></code> <br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="rolesAction" id="_rolesAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_rolesAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#92" title="Go to source code">rolesAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action to display list of available roles</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action to display list of available roles</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Model_AclRole.html">Fortuna_Model_AclRole</a></code></code> <br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="showRoleAction" id="_showRoleAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_showRoleAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#110" title="Go to source code">showRoleAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>method to show and edit and existing role or to add a new one</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>method to show and edit and existing role or to add a new one</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Form_AclRole.html">Fortuna_Form_AclRole</a></code></code> <br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteRoleAction" id="_deleteRoleAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteRoleAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#152" title="Go to source code">deleteRoleAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action to display delete role form and to delete role after confirmation</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action to display delete role form and to delete role after confirmation</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Model_AclRole.html">Fortuna_Model_AclRole</a></code></code> <br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="accountAction" id="_accountAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_accountAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#181" title="Go to source code">accountAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action to display account form</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action to display account form</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Model_User.html">Fortuna_Model_User</a></code></code> <br />
+						<code><code><a href="class-Fortuna_Form_Account.html">Fortuna_Form_Account</a></code></code> <br />
+						Zend_Auth<br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="settingsAction" id="_settingsAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_settingsAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#213" title="Go to source code">settingsAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action to display settings form which gives the possibility to change
+database settings and to update the database schema if needed</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action to display settings form which gives the possibility to change
+database settings and to update the database schema if needed</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						Zend_Registry<br />
+						<code><code><a href="class-Fortuna_Setup.html">Fortuna_Setup</a></code></code> <br />
+						Fortuna_Form_Setup<br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="usersAction" id="_usersAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_usersAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#256" title="Go to source code">usersAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action to display list of users</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action to display list of users</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Model_User.html">Fortuna_Model_User</a></code></code> <br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="showUserAction" id="_showUserAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_showUserAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#273" title="Go to source code">showUserAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action to display form to show and edit a user or to add a new one</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action to display form to show and edit a user or to add a new one</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Model_User.html">Fortuna_Model_User</a></code></code> <br />
+						<code><code><a href="class-Fortuna_Form_User.html">Fortuna_Form_User</a></code></code> <br />
+						Zend_Auth<br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteUserAction" id="_deleteUserAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteUserAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#317" title="Go to source code">deleteUserAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action to delete an existing user</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action to delete an existing user</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Model_User.html">Fortuna_Model_User</a></code></code> <br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="articlesAction" id="_articlesAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_articlesAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#343" title="Go to source code">articlesAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action with list of all articles</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action with list of all articles</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Model_Article.html">Fortuna_Model_Article</a></code></code> <br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="showArticleAction" id="_showArticleAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_showArticleAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#360" title="Go to source code">showArticleAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action with form to display article and to edit or delte one</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action with form to display article and to edit or delte one</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Model_Article.html">Fortuna_Model_Article</a></code></code> <br />
+						<code><code><a href="class-Fortuna_Form_Article.html">Fortuna_Form_Article</a></code></code> <br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteArticleAction" id="_deleteArticleAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteArticleAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#420" title="Go to source code">deleteArticleAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action to delete article</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action to delete article</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Model_Article.html">Fortuna_Model_Article</a></code></code> <br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="categoriesAction" id="_categoriesAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_categoriesAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#444" title="Go to source code">categoriesAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action to list categories available</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action to list categories available</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Model_Category.html">Fortuna_Model_Category</a></code></code> <br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="showCategoryAction" id="_showCategoryAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_showCategoryAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#461" title="Go to source code">showCategoryAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action to display form to show and edit a category or to add a new one</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action to display form to show and edit a category or to add a new one</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Model_Category.html">Fortuna_Model_Category</a></code></code> <br />
+						<code><code><a href="class-Fortuna_Form_Category.html">Fortuna_Form_Category</a></code></code> <br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteCategoryAction" id="_deleteCategoryAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteCategoryAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#509" title="Go to source code">deleteCategoryAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action to delete an existing category</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action to delete an existing category</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Model_Category.html">Fortuna_Model_Category</a></code></code> <br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="navigationAction" id="_navigationAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_navigationAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#535" title="Go to source code">navigationAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action to edit two-level navigation based on articles and categories</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action to edit two-level navigation based on articles and categories</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Model_Navigation.html">Fortuna_Model_Navigation</a></code></code> <br />
+						<code><code><a href="class-Fortuna_Model_Article.html">Fortuna_Model_Article</a></code></code> <br />
+						<code><code><a href="class-Fortuna_Model_Category.html">Fortuna_Model_Category</a></code></code> <br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="indexAction" id="_indexAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_indexAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#586" title="Go to source code">indexAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action to display dashboard of admin area with some stats about articles an
+categories in the system</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action to display dashboard of admin area with some stats about articles an
+categories in the system</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Model_User.html">Fortuna_Model_User</a></code></code> <br />
+						<code><code><a href="class-Fortuna_Model_Article.html">Fortuna_Model_Article</a></code></code> <br />
+						<code><code><a href="class-Fortuna_Model_ArticleCategory.html">Fortuna_Model_ArticleCategory</a></code></code> <br />
+						<code><code><a href="class-Fortuna_Model_Category.html">Fortuna_Model_Category</a></code></code> <br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="faqAction" id="_faqAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_faqAction">#</a>
+		<code><a href="source-class-Fortuna_AdminController.html#638" title="Go to source code">faqAction</a>( )</code>
+
+		<div class="description short">
+			
+<p>action to display page with frequently asked questions</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>action to display page with frequently asked questions</p>
+
+
+
+
+
+
+				<h4>Since</h4>
+				<div class="list">
+						1.0<br />
+				</div>
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-Fortuna_Model_User.html">Fortuna_Model_User</a></code></code> <br />
+						<code><code><a href="class-Fortuna_Form_User.html">Fortuna_Form_User</a></code></code> <br />
+						Zend_Registry<br />
+						simplexml_load_file()<br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Fortuna CMS API documentation generated by <a href="http://apigen.org">ApiGen 2.6.1</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

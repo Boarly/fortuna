@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="span4">
+		<div class="visible-desktop">
+		<p>
+		<date>
+			<?php echo Zend_Filter::filterStatic($this->article['date'], 'DateToLocalized'); ?>
+		</date>
+		</p>
+		<?php if ($this->categories): ?>
+			<?php foreach ($this->categories as $category): ?>
+				<p><a href="<?php echo $this->baseUrl('category/' . $category['slug']); ?>"><span class="label"><?php echo $category['name']; ?></span></a></p>
+			<?php endforeach; ?>
+		<?php endif; ?>
+		</div>
+	</div>
+	<div class="span8">
+		<?php echo $this->article['content']; ?>
+	</div>
+</div>

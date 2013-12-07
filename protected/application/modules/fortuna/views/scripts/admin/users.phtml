@@ -1,0 +1,35 @@
+<div class="widget">												
+	<div class="widget-content">
+        <div class="alert alert-info">
+          <a class="close" data-dismiss="alert">×</a>
+          <?php echo $this->translate('When you add a new user, an email with his credentials is sent to the given email address'); ?>
+        </div>
+
+		<?php echo $this->partial('partials/table.phtml', array(
+        	'columns' => array('id' => 'ID', 'firstname' => 'Firstname', 'lastname' => 'Lastname', 'acl_role' => 'Role'),
+        	'rows'    => $this->users,
+        	'actions' => array(
+            	array(
+            	      'url' 		=> 'admin/show-user/id/%s', 
+            	      'class' 		=> 'btn btn-small', 
+            	      'icon' 		=> 'edit'
+            	),
+            	array(
+            	      'url'   => 'admin/delete-user/id/%s',
+            	      'class' => 'btn btn-small', 
+            	      'icon'  => 'remove'
+            	)
+        	),
+        	'actionsId'     => 'id',
+        	'globalActions' => array(
+        	    array(
+					'url'   => 'admin/show-user', 
+					'class' => 'btn btn-small', 
+					'icon'  => 'plus'
+				)
+			)
+		)); ?>
+	
+	</div> <!-- /widget-content -->
+	
+</div> <!-- /widget -->

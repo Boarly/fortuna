@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.6.1" />
+	<meta name="robots" content="noindex" />
+
+	<title>File Filter/DateToLocalized.php | Fortuna CMS</title>
+
+	<script type="text/javascript" src="resources/combined.js?144019575"></script>
+	<script type="text/javascript" src="elementlist.js?578987407"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li class="active"><a href="package-Fortuna.html">Fortuna<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.Controller.html">Controller<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.Controller.Plugin.html">Plugin</a>
+						</li>
+							</ul></li>
+				<li><a href="package-Fortuna.Db.html">Db<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.Db.Table.html">Table</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="package-Fortuna.Filter.html">Filter</a>
+						</li>
+				<li><a href="package-Fortuna.Form.html">Form</a>
+						</li>
+				<li><a href="package-Fortuna.Model.html">Model</a>
+						</li>
+				<li><a href="package-Fortuna.Setup.html">Setup</a>
+						</li>
+				<li><a href="package-Fortuna.View.html">View<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.View.Helper.html">Helper</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="package-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Fortuna_Filter_BooleanToLocalized.html">Fortuna_Filter_BooleanToLocalized</a></li>
+				<li class="active"><a href="class-Fortuna_Filter_DateToLocalized.html">Fortuna_Filter_DateToLocalized</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-Fortuna.Filter.html" title="Summary of Fortuna\Filter"><span>Package</span></a>
+			</li>
+			<li>
+				<a href="class-Fortuna_Filter_DateToLocalized.html" title="Summary of Fortuna_Filter_DateToLocalized"><span>Class</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="fortuna-cms-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+			</li>
+		</ul>
+	</div>
+
+<pre><code><a href="#1" id="1" class="l"> 1: </a><span class="xlang">&lt;?php</span>
+<a href="#2" id="2" class="l"> 2: </a>
+<a href="#3" id="3" class="l"> 3: </a><span class="php-comment">/**
+</span><a href="#4" id="4" class="l"> 4: </a><span class="php-comment"> * filter to localize date field values from database
+</span><a href="#5" id="5" class="l"> 5: </a><span class="php-comment"> * 
+</span><a href="#6" id="6" class="l"> 6: </a><span class="php-comment"> * @package Fortuna
+</span><a href="#7" id="7" class="l"> 7: </a><span class="php-comment"> * @subpackage Fortuna_Filter
+</span><a href="#8" id="8" class="l"> 8: </a><span class="php-comment"> * @copyright Copyright (c) 2012 Peter Persiel, Sven Ballay
+</span><a href="#9" id="9" class="l"> 9: </a><span class="php-comment"> * @version 1.0
+</span><a href="#10" id="10" class="l">10: </a><span class="php-comment"> * @since 1.0 
+</span><a href="#11" id="11" class="l">11: </a><span class="php-comment"> */</span>
+<a href="#12" id="12" class="l">12: </a><span class="php-keyword1">class</span> Fortuna_Filter_DateToLocalized <span class="php-keyword1">implements</span> Zend_Filter_Interface {
+<a href="#13" id="13" class="l">13: </a>    
+<a href="#14" id="14" class="l">14: </a>    <span class="php-comment">/**
+</span><a href="#15" id="15" class="l">15: </a><span class="php-comment">     * filter $value timestamp and get real date
+</span><a href="#16" id="16" class="l">16: </a><span class="php-comment">     * 
+</span><a href="#17" id="17" class="l">17: </a><span class="php-comment">     * @param int $value
+</span><a href="#18" id="18" class="l">18: </a><span class="php-comment">     * @return string
+</span><a href="#19" id="19" class="l">19: </a><span class="php-comment">     * @uses Zend_Date
+</span><a href="#20" id="20" class="l">20: </a><span class="php-comment">     * @since 1.0
+</span><a href="#21" id="21" class="l">21: </a><span class="php-comment">     */</span>
+<a href="#22" id="22" class="l">22: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> filter(<span class="php-var">$value</span>) {
+<a href="#23" id="23" class="l">23: </a>        <span class="php-var">$date</span> = <span class="php-keyword1">new</span> Zend_Date(<span class="php-var">$value</span>);
+<a href="#24" id="24" class="l">24: </a>
+<a href="#25" id="25" class="l">25: </a>        <span class="php-keyword1">return</span> <span class="php-var">$date</span>-&gt;get(Zend_Date::DATE_MEDIUM);
+<a href="#26" id="26" class="l">26: </a>    }
+<a href="#27" id="27" class="l">27: </a>}</code></pre>
+
+	<div id="footer">
+		Fortuna CMS API documentation generated by <a href="http://apigen.org">ApiGen 2.6.1</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

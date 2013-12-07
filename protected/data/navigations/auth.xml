@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+        <login>
+                <label>Login</label>
+                <controller>auth</controller>
+                <action>login</action>
+                <route>login</route>         
+        </login>
+        <recover>
+                <label>Recover</label>
+                <controller>auth</controller>
+                <action>recover</action>
+                <route>recover</route>  
+        </recover>
+</configdata>

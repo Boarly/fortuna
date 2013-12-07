@@ -1,0 +1,10 @@
+Dear <?php echo $this->user['firstname'] . ' ' . $this->user['lastname']; ?>,<br />
+<br />
+you have requested a recover of your password at "<?php echo $this->app_title; ?>".<br />
+
+
+<br />
+Please click the following link: "<a href="<?php echo $this->baseUrl('/recover/' . $this->passwordLink); ?>"><?php echo $this->baseUrl('/recover/' . $this->passwordLink); ?></a>.<br />
+<br />
+<hr />
+Fortuna CMS<br />

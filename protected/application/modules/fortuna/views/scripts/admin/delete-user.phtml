@@ -1,0 +1,20 @@
+<?php echo $this->action('users', 'admin'); ?>
+
+<?php echo $this->partial('partials/modal.phtml', array(
+	'content'  => $this->translate('Are you sure to delete the user "%s"?', $this->data['email']),
+	'header'   => $this->translate('Delete User'),
+	'redirect' => $this->baseUrl('admin/users'),
+	'fade'	 => true,
+	'buttons'  => array(
+	    array(
+			'url'   => $this->baseUrl('admin/users'),
+			'text'  => $this->translate('Cancel'),
+			'class' => 'btn'
+		),
+		array(
+			'url'   => $this->baseUrl('admin/delete-user/id/' . $this->data['id'] . '/?confirm=1'),
+			'text'  => $this->translate('Delete'),
+			'class' => 'btn btn-primary'
+		)
+	)
+)); ?>

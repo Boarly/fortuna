@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.6.1" />
+
+	<title>Class Fortuna_Controller_Plugin_Acl | Fortuna CMS</title>
+
+	<script type="text/javascript" src="resources/combined.js?144019575"></script>
+	<script type="text/javascript" src="elementlist.js?578987407"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li class="active"><a href="package-Fortuna.html">Fortuna<span></span></a>
+						<ul>
+				<li class="active"><a href="package-Fortuna.Controller.html">Controller<span></span></a>
+						<ul>
+				<li class="active"><a href="package-Fortuna.Controller.Plugin.html">Plugin</a>
+						</li>
+							</ul></li>
+				<li><a href="package-Fortuna.Db.html">Db<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.Db.Table.html">Table</a>
+						</li>
+							</ul></li>
+				<li><a href="package-Fortuna.Filter.html">Filter</a>
+						</li>
+				<li><a href="package-Fortuna.Form.html">Form</a>
+						</li>
+				<li><a href="package-Fortuna.Model.html">Model</a>
+						</li>
+				<li><a href="package-Fortuna.Setup.html">Setup</a>
+						</li>
+				<li><a href="package-Fortuna.View.html">View<span></span></a>
+						<ul>
+				<li><a href="package-Fortuna.View.Helper.html">Helper</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="package-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Fortuna_Controller_Plugin_Acl.html">Fortuna_Controller_Plugin_Acl</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-Fortuna.Controller.Plugin.html" title="Summary of Fortuna\Controller\Plugin"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="fortuna-cms-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+			</li>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Fortuna_Controller_Plugin_Acl</h1>
+
+
+	<div class="description">
+	
+<p>access control list controller plugin, used to allow/not allow privileges to
+current identity</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Zend_Controller_Plugin_Abstract
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>Fortuna_Controller_Plugin_Acl</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-Fortuna.html">Fortuna</a>\<a href="package-Fortuna.Controller.html">Controller</a>\<a href="package-Fortuna.Controller.Plugin.html">Plugin</a><br />
+
+				<b>Copyright:</b>
+				Copyright (c) 2012 Peter Persiel, Sven Ballay<br />
+				<b>Version:</b>
+				1.0<br />
+				<b>Since:</b>
+				1.0<br />
+				<b>Used by:</b>
+				<code><code><a href="class-Fortuna_Bootstrap.html#__initAcl">Fortuna_Bootstrap::_initAcl()</a></code></code> <br />
+		<b>Located at</b> <a href="source-class-Fortuna_Controller_Plugin_Acl.html#3" title="Go to source code">Controller/Plugin/Acl.php</a><br />
+	</div>
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="preDispatch" id="_preDispatch">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_preDispatch">#</a>
+		<code><a href="source-class-Fortuna_Controller_Plugin_Acl.html#62" title="Go to source code">preDispatch</a>( <span>Zend_Controller_Request_Abstract <var>$request</var></span> )</code>
+
+		<div class="description short">
+			
+<p>preDispatch callback function of controller plugin, if pugin has been
+registered this method is called at each construction of an controller (pre
+dispatch of action)</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>preDispatch callback function of controller plugin, if pugin has been
+registered this method is called at each construction of an controller (pre
+dispatch of action)</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$request</var></dt>
+					<dd><code>Zend_Controller_Request_Abstract</code><br> the current request object</dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code>Zend_Acl_Exception</code><br />
+				</div>
+
+				<h4>Uses</h4>
+				<div class="list">
+						Zend_Auth<br />
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Fortuna CMS API documentation generated by <a href="http://apigen.org">ApiGen 2.6.1</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

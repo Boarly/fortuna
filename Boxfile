@@ -1,0 +1,22 @@
+# Pagoda box file with instance settings
+
+web1:
+  name: fortuna
+  after_build:
+    - "php pagoda/config.php"
+    - "rm protected/application/modules/fortuna/controllers/InstallController.php"
+  before_deploy:
+    - "cp pagoda/application.ini.dist protected/application/configs/application.ini" 
+    - "php pagoda/migrate.php"
+  php_extensions:
+    - pdo_mysql
+    - mysql
+  php_version: 5.3.6
+  php_date_timezone: "Europe/Berlin"
+  php_default_locale: "de_DE"
+  shared_writable_dirs:
+    - protected/application/configs/
+
+db1:
+  name: fortuna
+  type: mysql

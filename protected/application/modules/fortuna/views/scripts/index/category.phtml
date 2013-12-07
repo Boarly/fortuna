@@ -1,0 +1,12 @@
+<?php $count = count($this->articles); foreach ($this->articles as $k => $article): ?>
+	<h2><a href="<?php echo $this->baseUrl('article/' . $article['slug'] ); ?>"><?php echo $article['title']; ?></a></h2>
+	<?php 
+		echo $this->partial('partials/article.phtml', array(
+	    	'article'    => $article
+	    ));
+	?>
+	<?php if ($k + 1 != $count): ?>
+	<hr>
+	<?php endif; ?>
+<?php endforeach; ?>
+

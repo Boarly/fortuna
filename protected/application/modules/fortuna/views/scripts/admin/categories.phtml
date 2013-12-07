@@ -1,0 +1,37 @@
+<div class="widget">
+													
+	<div class="widget-content">
+	
+		<?php echo $this->partial('partials/table.phtml', array(
+        	'columns' => array('id' => 'ID' , 'name' => 'Name'),
+        	'rows'    => $this->categories,
+        	'actions' => array(
+            	array(
+            	      'url' 		=> 'admin/show-category/id/%s', 
+            	      'class' 		=> 'btn btn-small', 
+            	      'icon' 		=> 'edit'
+            	),
+            	array(
+            	      'url'   => 'admin/delete-category/id/%s',
+            	      'class' => 'btn btn-small', 
+            	      'icon'  => 'remove'
+            	),
+                array(
+                      'url'   => 'category/id/%s',
+                      'class' => 'btn btn-small', 
+                      'icon'  => 'zoom-in'
+                )
+        	),
+        	'actionsId'     => 'id',
+        	'globalActions' => array(
+        	    array(
+					'url'   => 'admin/show-category', 
+					'class' => 'btn btn-small', 
+					'icon'  => 'plus'
+				)
+			)
+		)); ?>
+	
+	</div> <!-- /widget-content -->
+	
+</div> <!-- /widget -->
